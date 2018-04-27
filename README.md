@@ -17,7 +17,7 @@ Future versions hopefully won't have the parameter restriction and will support 
 Via Composer
 
 ``` bash
-$ composer require kdaviesnz/componentname
+$ composer require kdaviesnz/PHPUnitTestCreator
 ```
 
 ## Usage
