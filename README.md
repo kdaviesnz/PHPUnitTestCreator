@@ -4,12 +4,9 @@ Create unit tests for classes.
 
 Current restrictions:
 - Only works with pure methods.
-- Only works for methods that have no parameters.
 - Class constructor must have no parameters.
 
 (It is beta!)
-
-Future versions hopefully won't have the parameter restriction and will support a config file to enable users to override inputs / outputs without having to edit the generated test file.
 
 
 ## Install
