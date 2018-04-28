@@ -1,7 +1,7 @@
 {
     "name": "kdaviesnz/phpunittestcreator",
     "type": "library",
-    "description": "",
+    "description": "Create unit tests for classes.",
     "minimum-stability": "dev",
     "keywords": [
         "kdaviesnz",
