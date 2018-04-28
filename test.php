@@ -5,5 +5,8 @@ require("src/PHPUnitTestCreator.php");
 
 $creator = new \kdaviesnz\PHPUnitTestCreator\PHPUnitTestCreator();
 
-$creator->createTestFiles("src", "tests");
+$source_directory = "src";
+$destination_directory = "tests";
+
+$creator->createTestFiles($source_directory, $destination_directory);
 
