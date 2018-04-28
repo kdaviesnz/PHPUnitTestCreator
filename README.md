@@ -6,8 +6,6 @@ Current restrictions:
 - Only works with pure methods.
 - Class constructor must have no parameters.
 
-(It is beta!)
-
 See tests/PHPUnitTestCreator.json for example config file. Note config file must be named "HPUnitTestCreator.json" and be in the same directory that you generate your tests.
 
 ## Install
