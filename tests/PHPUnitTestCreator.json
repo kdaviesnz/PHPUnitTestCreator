@@ -1,0 +1,32 @@
+{
+    "kdaviesnz\\PHPUnitTestCreator\\PHPUnitTestCreator": {
+        "sayGreeting": {
+            "result": "Hi there",
+            "parameters": [
+                {
+                    "type": "string",
+                    "value": "Hi there"
+                }
+            ]
+        },
+        "sayGoodbye": {
+            "result": "Goodbye"
+        },
+        "sayHello": {
+            "result": "hello"
+        },
+        "multiply": {
+            "result": 200,
+            "parameters": [
+                {
+                    "type": "int",
+                    "value": 10
+                },
+                {
+                    "type": "int",
+                    "value": 20
+                }
+            ]
+        }
+    }
+}
