@@ -27,6 +27,69 @@
                     "value": 20
                 }
             ]
+        },
+        "wrapTestCode": {
+            "parameters": [
+                {
+                    "type": "string",
+                    "value": "filename"
+                },
+                {
+                    "type": "string",
+                    "value": "PHPUnitTestCreator"
+                },
+                {
+                    "type": "string",
+                    "value": "This is the body for the test"
+                }
+            ],
+            "result": "<?php\n\nrequire_once(\"vendor\/autoload.php\");\n        require_once(\"filename\");\n\n        class PHPUnitTestCreatorTest extends \\PHPUnit_Framework_TestCase\n        {\n        This is the body for the test\n}"
+        },
+        "getParametersAsString": {
+            "parameters": [
+                {
+                    "type": "string",
+                    "value": "10,"
+                },
+                {
+                    "type": "array",
+                    "value": {
+                        "value": "20",
+                        "key": "value",
+                        "type": "int"
+                    }
+                }
+            ],
+            "result": "10,20,"
+        },
+        "getMethodParameterValue": {
+            "parameters": [
+                {
+                    "type": "array",
+                    "value": {
+                        "value": 10,
+                        "key": "value",
+                        "type": "int"
+                    }
+                }
+            ],
+            "result": 10
+        },
+        "arrayIt": {
+            "parameters": [
+                {
+                    "type": "int",
+                    "value": 10
+                },
+                {
+                    "type": "int",
+                    "value": 20
+                }
+            ],
+            "result": [
+                10,
+                20
+            ]
         }
     }
 }
