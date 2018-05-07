@@ -113,6 +113,12 @@ class PHPUnitTestCreator
             return false;
         }
 
+        // Check if abstract
+        $reflection     = new \ReflectionClass($class_name);
+        if ($reflection->isAbstract()) {
+            return false;
+        }
+
         $pure_methods_validated = array_filter(
             $pureMethods,
             function ($pureMethod) use ($class_name) {
