@@ -6,7 +6,7 @@ Current restrictions:
 - Only works with pure methods.
 - Classes and functions that tests are to be generated for must be included.
 
-See tests/PHPUnitTestCreator.json for example config file. Note config file must be named "HPUnitTestCreator.json" and be in the same directory that you generate your tests.
+See tests/PHPUnitTestCreator.json for example config file. Note config file must be named "PHPUnitTestCreator.json" and be in the same directory that you generate your tests.
 
 ## Install
 
