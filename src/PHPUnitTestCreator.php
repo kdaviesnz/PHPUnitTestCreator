@@ -7,7 +7,7 @@ use kdaviesnz\callbackfileiterator\CallbackFileIterator;
 use kdaviesnz\functional\FunctionalModel;
 
 // Checked PSR2 28.4.2018
-
+  
 /**
  * Class PHPUnitTestCreator
  * @package kdaviesnz\PHPUnitTestCreator
