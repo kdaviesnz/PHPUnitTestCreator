@@ -44,6 +44,7 @@ class PHPUnitTestCreator
                     }
                 ));
 
+
                 if (!empty($pure_functions)) {
 
                     $config_json = $this->getConfig( $target_directory );
@@ -55,6 +56,7 @@ class PHPUnitTestCreator
                         $config_json,
                         $target_directory
                     );
+
                     if ( ! empty( $code_for_test_file ) ) {
                         $this->writeCodeForTestFile(
                             $pure_functions[0]["className"],
@@ -110,12 +112,6 @@ class PHPUnitTestCreator
     {
 
         if (!class_exists($class_name)) {
-            return false;
-        }
-
-        // Check if abstract
-        $reflection     = new \ReflectionClass($class_name);
-        if ($reflection->isAbstract()) {
             return false;
         }
 
@@ -231,12 +227,12 @@ class PHPUnitTestCreator
             $result_maybe_wrapped = $result == false ? "false" : "true";
         } elseif (is_array($result)){
             $result_maybe_wrapped = rtrim(array_reduce(
-                $result,
-                function($carry, $item) {
-                    return $carry . $item . ",";
-                },
-                "["
-            ),',') . "]";
+                    $result,
+                    function($carry, $item) {
+                        return $carry . $item . ",";
+                    },
+                    "["
+                ),',') . "]";
         } else {
             $result_maybe_wrapped = $result;
         }
@@ -338,8 +334,22 @@ class PHPUnitTestCreator
         }
 
         $file = rtrim($target_directory, "/") . "/" . "PHPUnitTestCreator.json";
-        file_put_contents($file, json_encode($config_json, JSON_PRETTY_PRINT));
 
+        // If config file already exists then we need to merge $config_json instead of
+        // just overwriting.
+        if (!file_exists($file)) {
+            file_put_contents( $file, json_encode( $config_json, JSON_PRETTY_PRINT ) );
+        } else {
+            $merged_json = $this->mergeConfigJSON($target_directory, $config_json, $file);
+            file_put_contents( $file, json_encode( $merged_json, JSON_PRETTY_PRINT ) );
+        }
+
+    }
+
+    private function mergeConfigJSON(string $target_directory, array $config_json, string $file)
+    {
+        $config_json_from_file = $this->getConfig($target_directory);
+        return $merged_config_json = array_merge($config_json_from_file, $config_json);
     }
 
     /**
