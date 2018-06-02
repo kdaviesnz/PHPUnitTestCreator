@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace kdaviesnz\PHPUnitTestCreator;
+namespace kdaviesnz\phpunittestcreator;
 
 use kdaviesnz\callbackfileiterator\CallbackFileIterator;
 use kdaviesnz\functional\FunctionalModel;
